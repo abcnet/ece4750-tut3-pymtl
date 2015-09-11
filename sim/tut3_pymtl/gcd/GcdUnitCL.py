@@ -19,12 +19,14 @@ def gcd( a, b ):
 
   ncycles = 0
   while True:
-    ncycles += 1
+    
     if a < b:
       a,b = b,a
     elif b != 0:
+      ncycles += 1
       a = a - b
     else:
+      ncycles += 1
       return (a,ncycles)
 
 #-------------------------------------------------------------------------
