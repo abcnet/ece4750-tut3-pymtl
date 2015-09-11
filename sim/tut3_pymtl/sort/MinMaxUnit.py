@@ -23,3 +23,28 @@ class MinMaxUnit( Model ):
     # test from scratch named MinMaxUnit_test.py.
     # '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+    # Concurrent block modeling register
+
+    
+
+    #oncurrent block modeling incrementer
+    
+    @s.combinational
+    def block2():
+      if s.in0  <= s.in1:
+        s.out_min.value = s.in0
+        s.out_max.value = s.in1
+      else:
+        s.out_min.value = s.in1
+        s.out_max.value = s.in0
+        
+        
+    # This model is incomplete. As part of the tutorial you will aadd a
+    # combinational concurrent block to model the incrementer logic, and
+    # later you will a line tracing function to compactly output the
+    # input, register, and output vaules.
+    # '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+  def line_trace( s ):
+    return "{} {} {} {} {} {}".format( s.in0, s.in1, s.reg_out0, s.reg_out1,
+     s.out_min, s.out_max )
